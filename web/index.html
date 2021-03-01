@@ -27,7 +27,8 @@
         <div class="container-fluid text-center">
             <textarea class="form-control form-control-lg mb-3" id="yourinput" name="yourinput" rows="4"></textarea>
             <button onclick="uppercase_convert_javascript()" id="uppercase" type="button" class="btn btn-primary btn-lg">UPPERCASE</button>
-            <button onclick="lowercase_convert_javascript()" id="lowercase" type="button" class="btn btn-primary btn-lg">LOWERCASE</button>
+            <button onclick="lowercase_convert_javascript()" id="lowercase" type="button" class="btn btn-primary btn-lg">lowercase</button>
+            <button onclick="copy_to_clipboard()" id="lowercase" type="button" class="btn btn-primary btn-lg btn-success">Copy To Clipboard</button>
         </div>
         <script>
 
@@ -46,6 +47,11 @@
             function change_text_area(text) {
                 document.getElementById("yourinput").value = text;
                 return;//
+            }
+            function copy_to_clipboard() {
+                var copyText = document.getElementById("yourinput");
+                copyText.select();
+                document.execCommand("copy");
             } 
         </script>
         
