@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Case Converter powerd by EEL</title>
+        <link rel="icon" href="favicon.ico" />
+        <!-- Favicon made by Vecteezy.com-->
+        <link rel="manifest" href="/site.webmanifest">
+        <link href="css/bootstrap.css" rel="stylesheet" />
+        <link href="css/bootstrap-theme.css" rel="stylesheet" />
+        <script type = "text/javascript" src="js/jquery-3.2.1.min.js"></script>
+        <script type = "text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+        <script type = "text/javascript" src="js/bootstrap.min.js"></script>
+        <script type = "text/javascript" src="js/script.js"></script>
+        <link rel="stylesheet" href="css/style.css">
+        <script type="text/javascript" src="/eel.js"></script>
+        <script type="text/javascript"></script>
+        
+    </head>
+
+    <body>
+        <!-- Header-->
+        <div class="container-fluid text-center">
+            <!-- for fun-->
+            <h1>var case_converter = True;</h1>
+        </div>
+        <!-- Input field and buttons-->
+        <div class="container-fluid text-center">
+            <textarea class="form-control form-control-lg mb-3" id="yourinput" name="yourinput" rows="4"></textarea>
+            <button onclick="uppercase_convert_javascript()" id="uppercase" type="button" class="btn btn-primary btn-lg">UPPERCASE</button>
+            <button onclick="lowercase_convert_javascript()" id="lowercase" type="button" class="btn btn-primary btn-lg">LOWERCASE</button>
+        </div>
+        <script>
+
+            function uppercase_convert_javascript() {
+                var text = document.getElementById("yourinput").value;
+                eel.uppercase_convert_python(text);
+                return;//
+            }
+
+            function lowercase_convert_javascript() {
+                var text = document.getElementById("yourinput").value;
+                eel.lowercase_convert_python(text);
+                return;//
+            }
+            eel.expose(change_text_area);
+            function change_text_area(text) {
+                document.getElementById("yourinput").value = text;
+                return;//
+            } 
+        </script>
+        
+    </body>
+</html>
